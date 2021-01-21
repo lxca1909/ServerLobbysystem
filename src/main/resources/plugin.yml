@@ -1,0 +1,6 @@
+name: LobbySystem
+version: 0.1
+main: de.lxca1909.lobbysystem.Main
+api-version: 1.16
+authors: [ lxca1909 ]
+description: TestLobbySystem von lxca1909
