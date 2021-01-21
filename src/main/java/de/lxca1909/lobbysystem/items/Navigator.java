@@ -13,7 +13,7 @@ public class Navigator implements Listener {
         Player p = e.getPlayer();
         if(e.getItem() == null)return;
         if(e.getItem().getType() == Material.COMPASS){
-            p.teleport(p.getLocation());
+
         }
     }
 }
