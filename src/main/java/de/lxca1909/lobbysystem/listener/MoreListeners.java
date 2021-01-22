@@ -9,7 +9,7 @@ public class MoreListeners implements Listener {
 
     @EventHandler
     public void on(PlayerInteractEvent e){
-        if(e.getClickedBlock().getType() == Material.WHEAT || e.getClickedBlock().getType() == Material.){
+        if(e.getClickedBlock().getType() == Material.WHEAT || e.getClickedBlock().getType() == Material.OAK_TRAPDOOR){
             e.setCancelled(true);
         }
     }
