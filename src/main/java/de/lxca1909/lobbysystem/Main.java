@@ -1,6 +1,5 @@
 package de.lxca1909.lobbysystem;
 
-import de.lxca1909.lobbysystem.commands.TestCommand;
 import de.lxca1909.lobbysystem.items.Playerhider;
 import de.lxca1909.lobbysystem.listener.Chatsystem;
 import de.lxca1909.lobbysystem.listener.Creaturespawn;
