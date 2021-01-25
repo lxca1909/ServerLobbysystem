@@ -1,5 +1,6 @@
 package de.lxca1909.lobbysystem;
 
+import de.lxca1909.lobbysystem.commands.TestCommand;
 import de.lxca1909.lobbysystem.items.Playerhider;
 import de.lxca1909.lobbysystem.listener.Chatsystem;
 import de.lxca1909.lobbysystem.listener.Creaturespawn;
@@ -37,7 +38,7 @@ public final class Main extends JavaPlugin {
         plManager.registerEvents(new Creaturespawn(), this);
     }
     public void CommandRegister(){
-
+        getCommand("test").setExecutor(new TestCommand());
     }
 
     public static Main getMain() {
