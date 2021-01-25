@@ -13,7 +13,9 @@ public class TestCommand implements CommandExecutor {
         if(sender instanceof Player){
             Player p = (Player) sender;
             if(args[0].equalsIgnoreCase("ninja")){
-                p.sendActionBar("Das geht!");
+                p.sendMessage("Das geht!");
+            }else {
+                p.sendMessage("Das geht nicht!");
             }
         }
         return false;
