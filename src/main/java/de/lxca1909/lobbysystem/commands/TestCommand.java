@@ -12,10 +12,25 @@ public class TestCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if(sender instanceof Player){
             Player p = (Player) sender;
-            if(args[0].equalsIgnoreCase("ninja")){
-                p.sendActionBar("Das geht!");
+//            p.sendMessage("Test");
+            if(args.length == 0){
+                p.sendMessage("§cDas reicht nicht. Richtiger Syntax: /changekit <kit>");
+            }else if(args.length == 1){
+                switch (args[0]){
+                    case "ninja":
+                        p.sendMessage("uff das geht endlich");
+                        break;
+                    case "stopmer":
+                        p.sendMessage("uff das geht endlich auch");
+                        break;
+                    case "test":
+                        break;
+                    default:
+                        p.sendMessage("Das ist kein richtiges Kit oder du hast es falsch geschrieben");
+                }
+
             }
         }
-        return false;
+        return true;
     }
 }
