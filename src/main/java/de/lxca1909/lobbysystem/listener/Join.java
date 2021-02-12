@@ -17,7 +17,14 @@ public class Join implements Listener {
     @EventHandler
     public void on(PlayerJoinEvent e){
         Player p = e.getPlayer();
+        p.setPlayerListName("Test");
+        p.getInventory().clear();
         e.setJoinMessage("§7[§a+§7] "+p.getName());
+        if(p.hasPermission("lobby.rang.king")){
+            Bukkit.broadcastMessage("§f§l"+p.getName()+" §r§7ist gerade auf den Server gejoint!");
+        }else if(p.hasPermission("lobby.rang.vip")){
+            p.sendMessage("Wilkommen zurück "+ p.getName() +"!");
+        }
 
         ItemStack navi = new ItemStack(Material.COMPASS);
         ItemMeta navimeta = navi.getItemMeta();
@@ -31,7 +38,7 @@ public class Join implements Listener {
 
 
         p.getInventory().setItem(0, navi);
-        if(!p.hasPlayedBefore()) {
+        if(p.hasPlayedBefore()) {
             p.getInventory().setItem(1, hideron);
         }
         for(Player other : Bukkit.getOnlinePlayers()){

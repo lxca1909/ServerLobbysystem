@@ -1,9 +1,11 @@
 package de.lxca1909.lobbysystem;
 
+import de.lxca1909.lobbysystem.commands.Build;
 import de.lxca1909.lobbysystem.items.Playerhider;
 import de.lxca1909.lobbysystem.listener.Chatsystem;
 import de.lxca1909.lobbysystem.listener.Creaturespawn;
 import de.lxca1909.lobbysystem.listener.Join;
+import de.lxca1909.lobbysystem.listener.MoreListeners;
 import de.lxca1909.lobbysystem.utils.CM;
 import org.bukkit.*;
 import org.bukkit.plugin.PluginManager;
@@ -12,7 +14,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class Main extends JavaPlugin {
 
     private static Main main;
-    public static String prefix = "§8[§eLobbysystem§8]§7 ";
+    public static String prefix = "§8[§6Lobbysystem§8]§7 ";
 
     @Override
     public void onEnable() {
@@ -35,9 +37,10 @@ public final class Main extends JavaPlugin {
         plManager.registerEvents(new Join(), this);
         plManager.registerEvents(new Playerhider(), this);
         plManager.registerEvents(new Creaturespawn(), this);
+        plManager.registerEvents(new MoreListeners(), this);
     }
     public void CommandRegister(){
-        getCommand("test").setExecutor(new TestCommand());
+        getCommand("build").setExecutor(new Build());
     }
 
     public static Main getMain() {

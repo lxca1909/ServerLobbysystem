@@ -1,5 +1,6 @@
 package de.lxca1909.lobbysystem.items;
 
+import de.lxca1909.lobbysystem.Main;
 import de.lxca1909.lobbysystem.utils.CM;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -39,11 +40,10 @@ public class Playerhider implements Listener {
                     p.sendMessage("Used");
                     CM.setCooldown(p, 2);
                     for (Player all : Bukkit.getOnlinePlayers()) {
-                        p.showPlayer(all);
-                    }
+                        p.showPlayer(all); }
                     p.getInventory().setItemInMainHand(hideron);
                 } else {
-                    p.sendMessage("§cWarte kurz!");
+                    p.sendMessage(Main.prefix+"§cWarte kurz!");
                 }
             } else if (e.getItem().getType() == Material.GREEN_DYE) {
                 if (CM.checkCooldown(p)) {
@@ -60,7 +60,7 @@ public class Playerhider implements Listener {
                     }
                     p.getInventory().setItemInMainHand(hidervip);
                 } else {
-                    p.sendMessage("§cWarte kurz!");
+                    p.sendMessage(Main.prefix+"§cWarte kurz!");
                 }
             } else if (e.getItem().getType() == Material.YELLOW_DYE) {
                 if (CM.checkCooldown(p)) {
@@ -75,7 +75,7 @@ public class Playerhider implements Listener {
                         CM.setCooldown(p, 2);
                     }
                 } else {
-                    p.sendMessage("§cWarte kurz!");
+                    p.sendMessage(Main.prefix+"§cWarte kurz!");
                 }
             }
         }

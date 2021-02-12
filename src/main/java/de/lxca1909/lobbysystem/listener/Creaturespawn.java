@@ -8,8 +8,9 @@ public class Creaturespawn implements Listener {
 
     @EventHandler
     public void on(CreatureSpawnEvent e){
-        if(!(e.getSpawnReason() == CreatureSpawnEvent.SpawnReason.DISPENSE_EGG) || !(e.getSpawnReason() == CreatureSpawnEvent.SpawnReason.SPAWNER_EGG)){
+        if(e.getSpawnReason() != CreatureSpawnEvent.SpawnReason.DISPENSE_EGG || e.getSpawnReason() != CreatureSpawnEvent.SpawnReason.SPAWNER_EGG || e.getSpawnReason() != CreatureSpawnEvent.SpawnReason.CUSTOM){
             e.setCancelled(true);
-        }
+        }else
+            e.setCancelled(false);
     }
 }

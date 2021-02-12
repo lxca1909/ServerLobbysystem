@@ -7,3 +7,6 @@ description: TestLobbySystem von lxca1909
 commands:
   test:
     description: Test Command
+
+  build:
+    description: Build Command
